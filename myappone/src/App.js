@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function Helloword( props){
+/* function Helloword( props){
   return(
   <div id="hello">
     <h3>{props.subtitle}</h3>
@@ -9,8 +9,37 @@ function Helloword( props){
     
   </div>
   )
-}
+} */
 
+class Helloword extends React.Component{
+  
+  state={
+    show:true
+  }
+
+  toggleshow = () => {
+    this.setState({show : !this.state.show})
+  }
+  render () {
+    if (this.state.show){
+      return (
+        <div id="hello">
+          <h3>{this.props.subtitle}</h3>
+          {this.props.mytext}    
+          <button onClick={this.toggleshow }> Toggle show </button>
+        </div>
+      )
+    } else{
+      return <h1>
+      there are not elements
+      <button onClick={this.toggleshow}>
+        Toggle show
+      </button>
+      </h1>
+    }
+    
+  }
+}
 
 function App() {
   return (
