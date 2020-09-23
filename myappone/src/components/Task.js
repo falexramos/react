@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Task extends Component{
     StyleCompleted(){
@@ -24,6 +25,9 @@ class Task extends Component{
     }
 }
 
+Task.propTypes={
+    task: PropTypes.object.isRequired
+}
 const btnDelete ={
     fontSize:'18px',
     background:'#ea2027',
